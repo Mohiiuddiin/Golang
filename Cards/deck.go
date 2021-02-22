@@ -24,17 +24,15 @@ func newDeck() deck {
 	}
 	return cards
 }
-
-func deal(d deck, handSize int) (deck, deck) {
-	return d[:handSize], d[handSize:]
-}
-
 //converting deck to a slice of array []string(d) -->type conversion
-//Joing all strings of a slice of array to a comma separated single string
+//Joining all strings of a slice of array to a comma separated single string
 func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
-
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
+//...
 func (d deck) saveToFile(fileName string) error {
 	return ioutil.WriteFile(fileName, []byte(d.toString()), 0666)
 }
