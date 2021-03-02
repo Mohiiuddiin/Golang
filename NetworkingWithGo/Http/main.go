@@ -24,15 +24,15 @@ func main() {
 	}
 	fmt.Println("Remote Addrress : \n" + connection.RemoteAddr().String())
 
-	byteString := make([]byte, 1024)
+	byteSlice := make([]byte, 1024)
 
 	//read bytestring
-	byteReader, err := connection.Read(byteString)
+	byteReader, err := connection.Read(byteSlice)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	requestString := string(byteString[:byteReader])
+	requestString := string(byteSlice[:byteReader])
 
 	fmt.Println("From Byte Reader : \n ", byteReader)
 	fmt.Println("From Request String: \n " + requestString)
