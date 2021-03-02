@@ -41,6 +41,7 @@ func (d deck) toString() string {
 func (d deck) saveToFile(fileName string) error {
 	return ioutil.WriteFile(fileName, []byte(d.toString()), 0666)
 	//0666 means anyone can read or write this file[file permission]
+
 }
 
 //d means reciever,which is a copy of deck
