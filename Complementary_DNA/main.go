@@ -42,7 +42,6 @@ func dnaStrand(dna string) string {
 				tmpSlice = append(tmpSlice, string(r))
 			} else {
 				r = rune(tmpStr[j])
-				r = unicode.ToLower(r)
 				tmpSlice = append(tmpSlice, string(r))
 			}
 		}
